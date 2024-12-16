@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="padding: 20px; text-align: center; background-color: #4caf50; color: #ffffff; border-radius: 8px 8px 0 0;">
+            <h1>Verify Your Email</h1>
+        </div>
+        <div style="padding: 20px;">
+            <p>Hello {{ user.email }},</p>
+            <p>Thank you for signing up! Please verify your email address by clicking the link below:</p>
+            <p style="text-align: center; margin: 20px 0;">
+                <a href="{{ url }}" style="background-color: #4caf50; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
+            </p>
+            <p>If the button above does not work, copy and paste the following link into your browser:</p>
+            <p><a href="{{ url }}" style="color: #4caf50;">{{ url }}</a></p>
+        </div>
+        <div style="padding: 20px; text-align: center; font-size: 12px; color: #777; border-top: 1px solid #eee;">
+            &copy; 2024 Your App. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
