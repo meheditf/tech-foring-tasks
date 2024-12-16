@@ -17,7 +17,7 @@ To use this project to your own machine follow this steps
 First of all, clone this repository using this command
 
 ```
-git clone https://github.com/mehedishovon01/drf-boilerplate.git
+git clone https://github.com/mehedishovon01/tech-foring-tasks.git
 ```
 
 ### Create a virtualenv
