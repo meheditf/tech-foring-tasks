@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Define environment variables
-        PROJECT_NAME = "tech-foring-tasks"
-        }
+        PROJECT_NAME = 'tech-foring-tasks'
+    }
 
     stages {
         stage('Checkout Code') {
@@ -39,13 +39,13 @@ pipeline {
             }
         }
 
-    post {
-        success {
-            echo "Pipeline executed successfully!"
-        }
-        failure {
-            echo "Pipeline failed. Check the logs for details."
+        post {
+            success {
+                echo 'Pipeline executed successfully!'
+            }
+            failure {
+                echo 'Pipeline failed. Check the logs for details.'
+            }
         }
     }
-}
 }
