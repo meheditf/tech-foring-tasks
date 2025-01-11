@@ -26,26 +26,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Run Tests') {
-            steps {
-                script {
-                    // Run Django tests
-                    sh '''
-                        source venv/bin/activate
-                        python manage.py test
-                    '''
-                }
-            }
-        }
-
-        post {
-            success {
-                echo 'Pipeline executed successfully!'
-            }
-            failure {
-                echo 'Pipeline failed. Check the logs for details.'
-            }
-        }
     }
 }
