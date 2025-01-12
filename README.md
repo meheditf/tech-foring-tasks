@@ -95,4 +95,4 @@ Open the swagger view for the API Endpoints
 
 Click this link, [http://localhost:8000/api/v1/schema/swagger-ui/](http://localhost:8000/api/v1/schema/swagger-ui/)
 
-`Thanks for reading.`
+`Thanks for reading!`
