@@ -22,4 +22,4 @@ activate || { echo "Failed to activate virtual environment"; exit 1; }
 echo "Installing dependencies from requirements.txt..."
 pip install -r requirements.txt || { echo "Failed to install dependencies"; exit 1; }
 
-echo "Virtual environment setup completed successfully."
+echo "Virtual environment setup completed successfully!"

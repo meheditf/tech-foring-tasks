@@ -54,5 +54,3 @@ else
   echo "Failed to copy the project directory."
   exit 1
 fi
-
-echo "Deployment completed successfully."

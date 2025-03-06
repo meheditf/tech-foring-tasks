@@ -25,8 +25,6 @@ pipeline {
             steps {
                 sh '''
                 sudo chown -R root:www-data /var/www/html/tech-foring
-                // sudo systemctl restart daphne_bitrix.service
-                // sudo systemctl restart nginx
                 '''
             }
         }
