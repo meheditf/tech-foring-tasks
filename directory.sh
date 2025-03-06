@@ -50,6 +50,10 @@ sudo cp -rf "$WORKSPACE_DIR/"* "$DEPLOY_DIR/" || { echo "Failed to copy project 
 # Check if the copy operation was successful
 if [ $? -eq 0 ]; then
   echo "Project directory copied successfully."
+  # Remove the workspace directory
+  echo "Removing this directory from workspace..."
+  sudo rm -rf "$WORKSPACE_DIR"
+  echo "Directory removed successfully."
 else
   echo "Failed to copy the project directory."
   exit 1
