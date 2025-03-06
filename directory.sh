@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define paths for clarity
-WORKSPACE_DIR="/var/lib/jenkins/workspace/tech-foring"
+WORKSPACE_DIR="/var/lib/jenkins/workspace/Django-CI-CD"
 DEPLOY_DIR="/var/www/html/tech-foring"
 ENV_FILE=".env"
 ENV_FILE_PATH="/var/lib/jenkins/workspace/secrets/tasks/$ENV_FILE"
