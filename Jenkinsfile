@@ -5,7 +5,7 @@ pipeline {
         {
             steps {
                 sh '''
-                chmod +x directory.sh
+                sudo chmod +x directory.sh
                 ./directory.sh
                 '''
             }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 cd /var/www/html/tech-foring
-                chmod +x envsetup.sh
+                sudo chmod +x envsetup.sh
                 ./envsetup.sh
                 '''
             }
