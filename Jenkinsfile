@@ -1,50 +1,43 @@
 pipeline {
     agent any
-
-    environment {
-        // Define environment variables
-        PROJECT_NAME = "tech-foring-tasks"
-        }
-
     stages {
-        stage('Checkout Code') {
+        stage('Move Directory & Secrets')
+        {
             steps {
-                // Clone the repository
-                checkout scm
+                sh '''
+                chmod +x directory.sh
+                ./directory.sh
+                '''
             }
         }
-
-        stage('Setup Environment') {
+        stage('Setup Python Virtual Environments')
+        {
             steps {
-                script {
-                    // Install dependencies and setup environment
-                    sh '''
-                        python3 -m venv venv
-                        source venv/bin/activate
-                        pip install -r requirements.txt
-                    '''
-                }
+                sh '''
+                cd /var/www/html/tech-foring
+                chmod +x envsetup.sh
+                ./envsetup.sh
+                '''
             }
         }
-
-        stage('Run Tests') {
+        stage('Modify Ownership')
+        {
             steps {
-                script {
-                    // Run Django tests
-                    sh '''
-                        source venv/bin/activate
-                        python manage.py test
-                    '''
-                }
+                sh '''
+                sudo chown -R root:www-data /var/www/html/tech-foring
+                // sudo systemctl restart daphne_bitrix.service
+                // sudo systemctl restart nginx
+                '''
             }
         }
-
+    }
     post {
         success {
-            echo "Pipeline executed successfully!"
+            echo 'Pipeline completed successfully!'
         }
+
         failure {
-            echo "Pipeline failed. Check the logs for details."
+            echo 'Pipeline failed.'
         }
     }
 }
