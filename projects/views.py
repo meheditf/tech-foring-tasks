@@ -15,6 +15,17 @@ class ProjectsListCreateView(generics.ListCreateAPIView):
     - Test cases:
         - **List projects**: Verify that the authenticated user can retrieve their projects.
         - **Create project**: Ensure that the user can create a new project and it is associated with them.
+    - **Permissions**: Only authenticated users can access this view.
+    - **Queryset**: The queryset returns all projects owned by the authenticated user.
+    - **Serializer**: The `ProjectSerializer` is used to serialize the project data.
+    - **Response**: The response includes the serialized project data.
+    - **Error handling**: If the user is not authenticated, a `403 Forbidden` error is returned.
+    - **Example usage**:
+        - GET /projects/ -> List all projects for the authenticated user.
+        - POST /projects/ -> Create a new project for the authenticated user.
+    - **Example response**:
+        - GET /projects/ -> Returns a list of projects with their details.
+        - POST /projects/ -> Returns the created project with its details.
     """
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated]
