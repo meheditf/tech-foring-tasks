@@ -12,6 +12,9 @@ class ProjectsListCreateView(generics.ListCreateAPIView):
     View to list all projects or create a new project. This view handles two main functionalities:
     - **List all projects**: accessed with a GET request
     - **Create a new project**: accessed with a POST request
+    - Test cases:
+        - **List projects**: Verify that the authenticated user can retrieve their projects.
+        - **Create project**: Ensure that the user can create a new project and it is associated with them.
     """
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated]
